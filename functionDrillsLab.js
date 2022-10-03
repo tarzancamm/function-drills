@@ -256,8 +256,16 @@ printAllNames(namesArr)
 //CODE HERE
 
 
-let name = 'Cameron'
+let thatsOdd = (num) => {
+  if (num % 2 === 0) {
+    return "That's not odd!"
+  } else {
+    return "That is odd indeed!"
+  }
+}
 
+let oddChecker = thatsOdd(11)
+console.log(oddChecker)
 
 
 ////////////////// PROBLEM 14 ////////////////////
@@ -271,6 +279,12 @@ let name = 'Cameron'
 */
 
 //CODE HERE
+
+
+let bestMovie = string => `${string} is the best movie ever!`;
+
+console.log(bestMovie('Let There Be Blood'))
+
 
 
 ////////////////// PROBLEM 15 ////////////////////
@@ -287,6 +301,22 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 //CODE HERE
 
 
+let bigOrSmall = (arr) => {
+  let answers = [];
+  for (let i = 0; i < bigOrSmallArray.length; i++) {
+    if (arr[i] > 100) {
+      answers.push('big')
+    } else if (arr[i] <= 100) {
+      answers.push('small')
+    }
+  }
+  return answers
+}
+
+arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(arrayEvaluator);
+
+
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
 let loser = 'Glimmer'
@@ -298,6 +328,22 @@ let loser = 'Glimmer'
 //CODE HERE
 
 
+let theEliminator = (arr1, theLoser) => {
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] === theLoser) {
+      arr1.splice(i, 1)
+    }
+  }
+  return arr1;
+}
+
+console.log(theEliminator(contestants, loser))
+
+
+
+
+
+
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
 /*
@@ -306,6 +352,13 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+
+
+let newFunc = (string) => {
+  console.log(string.toUpperCase())
+}
+
+newFunc(sampleString);
 
 
 ////////////////// PROBLEM 18 ////////////////////
@@ -319,6 +372,19 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+let emailCheck = email => {
+  email.trim()
+  console.log(email)
+  if (email.includes('@')) {
+    return 'email verified'
+  } else {
+    return 'must provide a valid email address'
+  }
+}
+
+
+console.log(emailCheck('  cameronsminer@gmail.com'))
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -327,6 +393,18 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+
+let buyChocoFrogs = (gold) => {
+  let frogPrice = 3;
+  if (gold > 0) {
+    return Math.floor(gold / frogPrice)
+  } else if (gold <= 0) {
+    return 'Enter a valid amount of gold'
+  }
+}
+
+let totalFrogs = buyChocoFrogs(-1);
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
