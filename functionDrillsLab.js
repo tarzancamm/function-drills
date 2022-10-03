@@ -256,7 +256,7 @@ printAllNames(namesArr)
 //CODE HERE
 
 
-
+let name = 'Cameron'
 
 
 
