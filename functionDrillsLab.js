@@ -373,8 +373,9 @@ newFunc(sampleString);
 */
 
 let emailCheck = email => {
-  email.trim()
-  console.log(email)
+  let newString = String(email)
+  newString = newString.trim()
+  console.log(newString)
   if (email.includes('@')) {
     return 'email verified'
   } else {
@@ -403,7 +404,7 @@ let buyChocoFrogs = (gold) => {
   }
 }
 
-let totalFrogs = buyChocoFrogs(-1);
+let totalFrogs = buyChocoFrogs(10);
 console.log(totalFrogs)
 
 ////////////////// PROBLEM 20 ////////////////////
@@ -414,6 +415,19 @@ console.log(totalFrogs)
 //CODE HERE
 
 
+let buyChocoFrog = (gold) => {
+  let frogPrice = 3;
+  if (gold > 0) {
+    return Math.floor(gold / frogPrice)
+  } else if (gold <= 0) {
+    return 'Enter a valid amount of gold'
+  }
+}
+
+let totalFrog = buyChocoFrog(13);
+console.log(totalFrog)
+
+
 ////////////////// PROBLEM 21 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 /*
@@ -422,6 +436,18 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 
 //CODE HERE
 
+
+let whatOrder = (arr) => {
+  for (let i = 0; i < sampleArray.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false
+    }
+  }
+  return true
+}
+
+let arrayIsAscending = whatOrder(sampleArray)
+console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -445,13 +471,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['rubberDuck', 'sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['sailorDuck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['realDuck']
